@@ -1,0 +1,45 @@
+	SOUNDEX FR 
+	
+	Édouard BERGÉ © 12.2007 v1.2
+
+	This algo is now under MIT licence, you can do whatever you want with it ;)
+
+---------------------------------------------------------------------------------------------------------
+
+Pourquoi un nouveau Soundex? Il en existe déjà beaucoup de variantes non? Oui mais...
+
+- Ils généralisent trop les sons, provocants beaucoup de faux positifs.
+- Leur conversion phonétique est limitée alors que le français est complexe, résultant beaucoup de manqués.
+
+L'objectif est donc clair. Je veux...
+
+- Moins de faux positifs.
+- Plus de réussite.
+- De plus, je trouve pratique d'avoir une conversion qui reste "lisible".
+- Une certaine correction des erreurs orthographiques les plus courantes.
+
+Commençant mes développements avec 200 mots de référence, relire cette liste à chaque fois était
+ridiculement improductif et source d'erreurs. Je suis alors passé à la vitesse supérieure en me
+
+constituant un corpus de test de 7.000 mots (choisis en "feuilletant" un dictionnaire), ainsi
+qu'une page de test pour automatiser les vérifications et la détection d'éventuelles régressions.
+
+Pour terminer la validation de mon algorithme, j'ai téléchargé une version française du
+dictionnaire myspell pour l'ajouter à ma page de test. Cette ultime vérification me permit
+de corriger quelques imperfections. Au final, cet algorithme a été testé avec plus de 70.000 mots.
+
+Attention, il n'est pas parfait!  Mais j'ai enfin eu ce que je voulais, avec très peu de concessions,
+à savoir un algorithme qui se comporte bien avec des mots français. L'occasion pour moi de remercier
+quelques personnes:
+
+- Frédéric Brouard pour son article sur les soundex.
+http://sqlpro.developpez.com/cours/soundex/
+
+- Florent Bruneau de qui j'ai repris quelques morceaux de code. Lui même inspiré par Frédéric Brouard.
+http://blog.mymind.fr/post/2007/03/15/Soundex-Francais
+
+- Christophe Pythoud et Vazkor (Jean-Claude M.) pour leur immense travail sur le dictionnaire myspell.
+http://perso.latribu.com/rocky2/index.html (Le chien n'est pas méchant)
+
+
+
