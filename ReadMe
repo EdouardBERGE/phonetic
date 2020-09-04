@@ -6,6 +6,10 @@
 
 ---------------------------------------------------------------------------------------------------------
 
+English people may read the end of this file ;)
+
+
+
 Pourquoi un nouveau Soundex? Il en existe déjà beaucoup de variantes non? Oui mais...
 
 - Ils généralisent trop les sons, provocants beaucoup de faux positifs.
@@ -42,4 +46,27 @@ http://blog.mymind.fr/post/2007/03/15/Soundex-Francais
 http://perso.latribu.com/rocky2/index.html (Le chien n'est pas méchant)
 
 
+=================================
+
+I design this kind of soundex because soundex simplifies too much sounds
+
+So the main goal was to:
+- have less false matchs
+- more success when searching
+- have a readable result
+- kind of common mistakes fixed
+
+As the french is a complex language, i developped the algo with a word corpus (SQL file)
+
+Thanks to the following people
+
+
+- Frédéric Brouard for his documentation about soundexes.
+http://sqlpro.developpez.com/cours/soundex/
+
+- Florent Bruneau  for the inspiration
+http://blog.mymind.fr/post/2007/03/15/Soundex-Francais
+
+- Christophe Pythoud et Vazkor (Jean-Claude M.) for their huge work on the myspell dictionnary.
+http://perso.latribu.com/rocky2/index.html (Le chien n'est pas méchant)
 
