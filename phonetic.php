@@ -2,37 +2,37 @@
 
 /* 
 	SOUNDEX FR 
-	Édouard BERGÉ © 12.2007 v1.2
+	Ã‰douard BERGÃ‰ Â© 12.2007 v1.2
 	MIT licence
 */
 
 function phonetique($sIn)
 {
-$accents = array('É' => 'E', 'È' => 'E', 'Ë' => 'E', 'Ê' => 'E','Á' => 'A', 'À' => 'A', 'Ä' => 'A', 'Â' => 'A', 
-				'Å' => 'A', 'Ã' => 'A', 'Æ' => 'E','Ï' => 'I', 'Î' => 'I', 'Ì' => 'I', 'Í' => 'I',
-				'Ô' => 'O', 'Ö' => 'O', 'Ò' => 'O', 'Ó' => 'O', 'Õ' => 'O', 'Ø' => 'O', 'Œ' => 'OEU',
-				'Ú' => 'U', 'Ù' => 'U', 'Û' => 'U', 'Ü' => 'U','Ñ' => 'N', 'Ç' => 'S', '¿' => 'E');
+$accents = array('Ã‰' => 'E', 'Ãˆ' => 'E', 'Ã‹' => 'E', 'ÃŠ' => 'E','Ã' => 'A', 'Ã€' => 'A', 'Ã„' => 'A', 'Ã‚' => 'A', 
+				'Ã…' => 'A', 'Ãƒ' => 'A', 'Ã†' => 'E','Ã' => 'I', 'ÃŽ' => 'I', 'ÃŒ' => 'I', 'Ã' => 'I',
+				'Ã”' => 'O', 'Ã–' => 'O', 'Ã’' => 'O', 'Ã“' => 'O', 'Ã•' => 'O', 'Ã˜' => 'O', 'Å’' => 'OEU',
+				'Ãš' => 'U', 'Ã™' => 'U', 'Ã›' => 'U', 'Ãœ' => 'U','Ã‘' => 'N', 'Ã‡' => 'S', 'Â¿' => 'E');
 
-$min2maj = array('é' => 'É', 'è' => 'È', 'ë' => 'Ë', 'ê' => 'Ê','á' => 'Á', 'â' => 'Â', 'à' => 'À', 'Ä' => 'A', 
-				'Â' => 'A', 'å' => 'Å', 'ã' => 'Ã', 'æ' => 'Æ',	'ï' => 'Ï', 'î' => 'Î', 'ì' => 'Ì', 'í' => 'Í',
-				'ô' => 'Ô', 'ö' => 'Ö', 'ò' => 'Ò', 'ó' => 'Ó','õ' => 'Õ', 'ø' => 'Ø', 'œ' => 'Œ',
-				'ú' => 'Ú', 'ù' => 'Ù', 'û' => 'Û', 'ü' => 'Ü','ç' => 'Ç', 'ñ' => 'Ñ', 'ß' => 'S');				
+$min2maj = array('Ã©' => 'Ã‰', 'Ã¨' => 'Ãˆ', 'Ã«' => 'Ã‹', 'Ãª' => 'ÃŠ','Ã¡' => 'Ã', 'Ã¢' => 'Ã‚', 'Ã ' => 'Ã€', 'Ã„' => 'A', 
+				'Ã‚' => 'A', 'Ã¥' => 'Ã…', 'Ã£' => 'Ãƒ', 'Ã¦' => 'Ã†',	'Ã¯' => 'Ã', 'Ã®' => 'ÃŽ', 'Ã¬' => 'ÃŒ', 'Ã­' => 'Ã',
+				'Ã´' => 'Ã”', 'Ã¶' => 'Ã–', 'Ã²' => 'Ã’', 'Ã³' => 'Ã“','Ãµ' => 'Ã•', 'Ã¸' => 'Ã˜', 'Å“' => 'Å’',
+				'Ãº' => 'Ãš', 'Ã¹' => 'Ã™', 'Ã»' => 'Ã›', 'Ã¼' => 'Ãœ','Ã§' => 'Ã‡', 'Ã±' => 'Ã‘', 'ÃŸ' => 'S');				
 
 			
-//$sIn = utf8_decode($sIn);						// Selon votre implémentation, vous aurez besoin de décoder ce qui arrive pour les caractères spéciaux
-$sIn = strtr( $sIn, $min2maj); 					// minuscules accentuées ou composées en majuscules simples
-$sIn = strtr( $sIn, $accents); 					// majuscules accentuées ou composées en majuscules simples
+//$sIn = utf8_decode($sIn);						// Selon votre implÃ©mentation, vous aurez besoin de dÃ©coder ce qui arrive pour les caractÃ¨res spÃ©ciaux
+$sIn = strtr( $sIn, $min2maj); 					// minuscules accentuÃ©es ou composÃ©es en majuscules simples
+$sIn = strtr( $sIn, $accents); 					// majuscules accentuÃ©es ou composÃ©es en majuscules simples
 $sIn = strtoupper( $sIn );     					// on passe tout le reste en majuscules
-$sIn = preg_replace( '`[^A-Z]`', '', $sIn ); 	// on garde uniquement les lettres de A à Z
+$sIn = preg_replace( '`[^A-Z]`', '', $sIn ); 	// on garde uniquement les lettres de A Ã  Z
 
-$sBack=$sIn;									// on sauve le code (utilisé pour les mots très courts)
+$sBack=$sIn;									// on sauve le code (utilisÃ© pour les mots trÃ¨s courts)
 
-$sIn = preg_replace( '`O[O]+`', 'OU', $sIn ); 	// pré traitement OO... -> OU
-$sIn = preg_replace( '`SAOU`', 'SOU', $sIn ); 	// pré traitement SAOU -> SOU
-$sIn = preg_replace( '`OES`', 'OS', $sIn ); 	// pré traitement OES -> OS
-$sIn = preg_replace( '`CCH`', 'K', $sIn ); 		// pré traitement CCH -> K
+$sIn = preg_replace( '`O[O]+`', 'OU', $sIn ); 	// prÃ© traitement OO... -> OU
+$sIn = preg_replace( '`SAOU`', 'SOU', $sIn ); 	// prÃ© traitement SAOU -> SOU
+$sIn = preg_replace( '`OES`', 'OS', $sIn ); 	// prÃ© traitement OES -> OS
+$sIn = preg_replace( '`CCH`', 'K', $sIn ); 		// prÃ© traitement CCH -> K
 $sIn = preg_replace( '`CC([IYE])`', 'KS$1', $sIn ); // CCI CCY CCE
-$sIn = preg_replace( '`(.)\1`', '$1', $sIn ); 	// supression des répétitions
+$sIn = preg_replace( '`(.)\1`', '$1', $sIn ); 	// supression des rÃ©pÃ©titions
 
 // quelques cas particuliers
 if ($sIn=="CD") return($sIn);
@@ -53,18 +53,18 @@ if ($sIn=="OS") return($sIn);
 if ($sIn=="RIZ") return("RI");
 if ($sIn=="RAZ") return("RA");
 
-// pré-traitements
+// prÃ©-traitements
 $sIn = preg_replace( '`OIN[GT]$`', 'OIN', $sIn );									// terminaisons OING -> OIN
 $sIn = preg_replace( '`E[RS]$`', 'E', $sIn ); 										// supression des terminaisons infinitifs et participes pluriels
-$sIn = preg_replace( '`(C|CH)OEU`', 'KE', $sIn ); 									// pré traitement OEU -> EU
-$sIn = preg_replace( '`MOEU`', 'ME', $sIn ); 										// pré traitement OEU -> EU
-$sIn = preg_replace( '`OE([UI]+)([BCDFGHJKLMNPQRSTVWXZ])`', 'E$1$2', $sIn ); 		// pré traitement OEU OEI -> E
-$sIn = preg_replace( '`^GEN[TS]$`', 'JAN', $sIn );									// pré traitement GEN -> JAN
-$sIn = preg_replace( '`CUEI`', 'KEI', $sIn ); 										// pré traitement accueil
-$sIn = preg_replace( '`([^AEIOUYC])AE([BCDFGHJKLMNPQRSTVWXZ])`', '$1E$2', $sIn ); 	// pré traitement AE -> E
-$sIn = preg_replace( '`AE([QS])`', 'E$1', $sIn ); 									// pré traitement AE -> E
-$sIn = preg_replace( '`AIE([BCDFGJKLMNPQRSTVWXZ])`', 'AI$1', $sIn );				// pré-traitement AIE(consonne) -> AI
-$sIn = preg_replace( '`ANIEM`', 'ANIM', $sIn ); 									// pré traitement NIEM -> NIM
+$sIn = preg_replace( '`(C|CH)OEU`', 'KE', $sIn ); 									// prÃ© traitement OEU -> EU
+$sIn = preg_replace( '`MOEU`', 'ME', $sIn ); 										// prÃ© traitement OEU -> EU
+$sIn = preg_replace( '`OE([UI]+)([BCDFGHJKLMNPQRSTVWXZ])`', 'E$1$2', $sIn ); 		// prÃ© traitement OEU OEI -> E
+$sIn = preg_replace( '`^GEN[TS]$`', 'JAN', $sIn );									// prÃ© traitement GEN -> JAN
+$sIn = preg_replace( '`CUEI`', 'KEI', $sIn ); 										// prÃ© traitement accueil
+$sIn = preg_replace( '`([^AEIOUYC])AE([BCDFGHJKLMNPQRSTVWXZ])`', '$1E$2', $sIn ); 	// prÃ© traitement AE -> E
+$sIn = preg_replace( '`AE([QS])`', 'E$1', $sIn ); 									// prÃ© traitement AE -> E
+$sIn = preg_replace( '`AIE([BCDFGJKLMNPQRSTVWXZ])`', 'AI$1', $sIn );				// prÃ©-traitement AIE(consonne) -> AI
+$sIn = preg_replace( '`ANIEM`', 'ANIM', $sIn ); 									// prÃ© traitement NIEM -> NIM
 $sIn = preg_replace( '`(DRA|TRO|IRO)P$`', '$1', $sIn ); 							// P terminal muet
 $sIn = preg_replace( '`(LOM)B$`', '$1', $sIn ); 									// B terminal muet
 $sIn = preg_replace( '`(RON|POR)C$`', '$1', $sIn ); 								// C terminal muet
@@ -93,10 +93,10 @@ $convMOut = array( 'ONB', 'ANB', 'ONP', 'ANP', 'INB', 'ANP','JANB','ANB', 'INBL'
 $sIn = str_replace( $convMIn, $convMOut, $sIn ); 	
 
 // Sons en K
-$sIn = preg_replace( '`^ECHO$`', 'EKO', $sIn ); 	// cas particulier écho
-$sIn = preg_replace( '`^ECEUR`', 'EKEUR', $sIn ); 	// cas particulier écœuré
-// Choléra Chœur mais pas chocolat!
-$sIn = preg_replace( '`^CH(OG+|OL+|OR+|EU+|ARIS|M+|IRO|ONDR)`', 'K$1', $sIn ); 				//En début de mot
+$sIn = preg_replace( '`^ECHO$`', 'EKO', $sIn ); 	// cas particulier Ã©cho
+$sIn = preg_replace( '`^ECEUR`', 'EKEUR', $sIn ); 	// cas particulier Ã©cÅ“urÃ©
+// CholÃ©ra ChÅ“ur mais pas chocolat!
+$sIn = preg_replace( '`^CH(OG+|OL+|OR+|EU+|ARIS|M+|IRO|ONDR)`', 'K$1', $sIn ); 				//En dÃ©but de mot
 $sIn = preg_replace( '`(YN|RI)CH(OG+|OL+|OC+|OP+|OM+|ARIS|M+|IRO|ONDR)`', '$1K$2', $sIn ); 	//Ou devant une consonne
 $sIn = preg_replace( '`CHS`', 'CH', $sIn );
 $sIn = preg_replace( '`CH(AIQ)`', 'K$1', $sIn );
@@ -148,7 +148,7 @@ $convPrOut = array( 'BUSIE','BUSIA','BASIA','ANSIEL','RESION','ENSIEL','ENSIAL',
 'CESIE','OFESIE','IPESI','LBUSION','BLUSION','LESION','LASION','SASIET');
 $sIn = str_replace( $convPrIn, $convPrOut, $sIn );
 $sIn = preg_replace( '`(.+)ANTI(AL|O)`', '$1ANSI$2', $sIn ); // sauf antialcoolique, antialbumine, antialarmer, ...
-$sIn = preg_replace( '`(.+)INUTI([^V])`', '$1INUSI$2', $sIn ); // sauf inutilité, inutilement, diminutive, ...
+$sIn = preg_replace( '`(.+)INUTI([^V])`', '$1INUSI$2', $sIn ); // sauf inutilitÃ©, inutilement, diminutive, ...
 $sIn = preg_replace( '`([^O])UTIEN`', '$1USIEN', $sIn ); // sauf soutien, ...
 $sIn = preg_replace( '`([^DE])RATI[E]$`', '$1RASI$2', $sIn ); // sauf xxxxxcratique, ...
 // TIEN TION -> SIEN SION v3.1
@@ -171,7 +171,7 @@ $sIn = str_replace( $convNasIn, $convNasOut, $sIn );
 $sIn = preg_replace( '`AIN$`', 'IN', $sIn );
 $sIn = preg_replace( '`AIN([BTDK])`', 'IN$1', $sIn );
 // UN -> IN
-$sIn = preg_replace( '`([^O])UND`', '$1IND', $sIn ); // aucun mot français ne commence par UND!
+$sIn = preg_replace( '`([^O])UND`', '$1IND', $sIn ); // aucun mot franÃ§ais ne commence par UND!
 $sIn = preg_replace( '`([JTVLFMRPSBD])UN([^IAE])`', '$1IN$2', $sIn );
 $sIn = preg_replace( '`([JTVLFMRPSBD])UN$`', '$1IN', $sIn );
 $sIn = preg_replace( '`RFUM$`', 'RFIN', $sIn );
@@ -189,7 +189,7 @@ $sIn = preg_replace( '`(.+[JTVLFMRPSBD])EN([JLFDSTG])`', '$1AN$2', $sIn );
 // EI -> AI
 $sIn = preg_replace( '`([VSBSTNRLPM])E[IY]([ACDFRJLGZ])`', '$1AI$2', $sIn );
 
-// Histoire d'Ô
+// Histoire d'Ã”
 $convNasIn  = array( 'EAU', 'EU',  'Y', 'EOI', 'JEA','OIEM','OUANJ','OUA','OUENJ');
 $convNasOut = array(   'O',  'E',  'I',  'OI', 'JA' ,'OIM' ,'OUENJ', 'OI','OUANJ');
 $sIn = str_replace( $convNasIn, $convNasOut, $sIn );
@@ -202,16 +202,16 @@ $sIn = preg_replace( '`PINK`', 'PONK', $sIn );				// retouche PINK -> PONK
 $sIn = preg_replace( '`KIND`', 'KOND', $sIn );				// retouche KIND -> KOND
 $sIn = preg_replace( '`KUM(N|P)`', 'KON$1', $sIn );			// retouche KUMN KUMP
 $sIn = preg_replace( '`LKOU`', 'LKO', $sIn );				// retouche LKOU -> LKO
-$sIn = preg_replace( '`EDBE`', 'EBE', $sIn );				// retouche EDBE pied-bœuf
+$sIn = preg_replace( '`EDBE`', 'EBE', $sIn );				// retouche EDBE pied-bÅ“uf
 $sIn = preg_replace( '`ARCM`', 'ARKM', $sIn );				// retouche SCH -> CH
 $sIn = preg_replace( '`SCH`', 'CH', $sIn );					// retouche SCH -> CH
-$sIn = preg_replace( '`^OINI`', 'ONI', $sIn );				// retouche début OINI -> ONI
+$sIn = preg_replace( '`^OINI`', 'ONI', $sIn );				// retouche dÃ©but OINI -> ONI
 $sIn = preg_replace( '`([^NDCGRHKO])APT`', '$1AT', $sIn );	// retouche APT -> AT
 $sIn = preg_replace( '`([L]|KON)PT`', '$1T', $sIn );		// retouche LPT -> LT
 $sIn = preg_replace( '`OTB`', 'OB', $sIn );					// retouche OTB -> OB (hautbois)
 $sIn = preg_replace( '`IXA`', 'ISA', $sIn );				// retouche IXA -> ISA
 $sIn = preg_replace( '`TG`', 'G', $sIn );					// retouche TG -> G
-$sIn = preg_replace( '`^TZ`', 'TS', $sIn );					// retouche début TZ -> TS
+$sIn = preg_replace( '`^TZ`', 'TS', $sIn );					// retouche dÃ©but TZ -> TS
 $sIn = preg_replace( '`PTIE`', 'TIE', $sIn );				// retouche PTIE -> TIE
 $sIn = preg_replace( '`GT`', 'T', $sIn );					// retouche GT -> T
 $sIn = str_replace( "ANKIEM", "ANKILEM", $sIn );			// retouche tranquillement
@@ -226,8 +226,8 @@ $sIn = preg_replace( '`CK`', 'K', $sIn );					// retouche CK -> K
 $sIn = preg_replace( '`USIL$`', 'USI', $sIn ); 				// terminaisons USIL -> USI
 $sIn = preg_replace( '`X$|[TD]S$|[DS]$`', '', $sIn );		// terminaisons TS DS LS X T D S...  v2.0
 $sIn = preg_replace( '`([^KL]+)T$`', '$1', $sIn );			// sauf KT LT terminal
-$sIn = preg_replace( '`^[H]`', '', $sIn );					// H pseudo muet en début de mot, je sais, ce n'est pas une terminaison
-$sBack2=$sIn;												// on sauve le code (utilisé pour les mots très courts)
+$sIn = preg_replace( '`^[H]`', '', $sIn );					// H pseudo muet en dÃ©but de mot, je sais, ce n'est pas une terminaison
+$sBack2=$sIn;												// on sauve le code (utilisÃ© pour les mots trÃ¨s courts)
 $sIn = preg_replace( '`TIL$`', 'TI', $sIn );				// terminaisons TIL -> TI
 $sIn = preg_replace( '`LC$`', 'LK', $sIn );					// terminaisons LC -> LK
 $sIn = preg_replace( '`L[E]?[S]?$`', 'L', $sIn );			// terminaisons LE LES -> L
@@ -252,41 +252,41 @@ $sIn = preg_replace( '`UC$`', 'UK', $sIn );					// terminaisons UC -> UK
 $sIn = preg_replace( '`AING$`', 'IN', $sIn );				// terminaisons AING -> IN
 $sIn = preg_replace( '`([EISOARN])C$`', '$1K', $sIn );		// terminaisons C -> K
 $sIn = preg_replace( '`([ABD-MO-Z]+)[EH]+$`', '$1', $sIn );	// terminaisons E ou H sauf pour C et N
-$sIn = preg_replace( '`EN$`', 'AN', $sIn );					// terminaisons EN -> AN (difficile à faire avant sans avoir des soucis) Et encore, c'est pas top!
+$sIn = preg_replace( '`EN$`', 'AN', $sIn );					// terminaisons EN -> AN (difficile Ã  faire avant sans avoir des soucis) Et encore, c'est pas top!
 $sIn = preg_replace( '`(NJ)EN$`', '$1AN', $sIn );			// terminaisons EN -> AN
 $sIn = preg_replace( '`^PAIEM`', 'PAIM', $sIn ); 			// PAIE -> PAI
 $sIn = preg_replace( '`([^NTB])EF$`', '\1', $sIn );			// F muet en fin de mot
 
-$sIn = preg_replace( '`(.)\1`', '$1', $sIn ); 				// supression des répétitions (suite à certains remplacements)
+$sIn = preg_replace( '`(.)\1`', '$1', $sIn ); 				// supression des rÃ©pÃ©titions (suite Ã  certains remplacements)
 
 // cas particuliers, bah au final, je n'en ai qu'un ici
 $convPartIn  = array( 'FUEL');
 $convPartOut = array( 'FIOUL');
 $sIn = str_replace( $convPartIn, $convPartOut, $sIn ); 		
 
-// Ce sera le seul code retourné à une seule lettre!
+// Ce sera le seul code retournÃ© Ã  une seule lettre!
 if ($sIn=='O') return($sIn); 								
  
 // seconde chance sur les mots courts qui ont souffert de la simplification
 if (strlen($sIn)<2) 
 {
-	// Sigles ou abréviations
+	// Sigles ou abrÃ©viations
 	if (preg_match("`[BCDFGHJKLMNPQRSTVWXYZ][BCDFGHJKLMNPQRSTVWXYZ][BCDFGHJKLMNPQRSTVWXYZ][BCDFGHJKLMNPQRSTVWXYZ]*`",$sBack)) 
 		return($sBack);
 	
 	if (preg_match("`[RFMLVSPJDF][AEIOU]`",$sBack))
 	{
 		if (strlen($sBack)==3) 
-			return(substr($sBack,0,2));// mots de trois lettres supposés simples
+			return(substr($sBack,0,2));// mots de trois lettres supposÃ©s simples
 		if (strlen($sBack)==4) 
-			return(substr($sBack,0,3));// mots de quatre lettres supposés simples
+			return(substr($sBack,0,3));// mots de quatre lettres supposÃ©s simples
 	}
 	
 	if (strlen($sBack2)>1) return $sBack2;
 }
  
 if (strlen($sIn)>1)
-	return substr($sIn,0,16); // Je limite à 16 caractères mais vous faites comme vous voulez!
+	return substr($sIn,0,16); // Je limite Ã  16 caractÃ¨res mais vous faites comme vous voulez!
 else
 	return '';
 }
@@ -295,6 +295,3 @@ else
 
 
 ?>
-
-
-
